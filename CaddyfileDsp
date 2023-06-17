@@ -1,0 +1,5 @@
+dsp.paa-tips.com:44303
+
+tls ./certfiles/_wildcard.paa-tips.com+1.pem ./certfiles/_wildcard.paa-tips.com+1-key.pem
+reverse_proxy :8080
+

@@ -1,0 +1,5 @@
+publisher.paa-tips.com:44302
+
+tls ./certfiles/_wildcard.paa-tips.com+1.pem ./certfiles/_wildcard.paa-tips.com+1-key.pem
+reverse_proxy :8080
+
