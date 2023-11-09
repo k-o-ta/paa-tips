@@ -1,32 +1,11 @@
-import {calc} from "./calc";
+import {generateBid, reportWin} from "../join-ad-interest-group/module";
 
 globalThis.generateBid = function(group, auctionSignals, perBuyerSignals, trustedBiddingSignals, browserSignals) {
-    console.log('generateBid',
-        JSON.stringify({
-            group,
-            auctionSignals,
-            perBuyerSignals,
-            trustedBiddingSignals,
-            browserSignals,
-        })
-    )
-    console.log('calc', calc())
-    return {
-        bid: 1,
-        ad: {
-            adName: "adName"
-        },
-        render: group.ads[0].renderUrl,
-    }
+    return generateBid(group, auctionSignals, perBuyerSignals, trustedBiddingSignals, browserSignals)
 }
 
 globalThis.reportWin = function(auctionSignals, perBuyerSignals, sellerSignals, browserSignals) {
-    console.log("reportWin", JSON.stringify({
-        auctionSignals,
-        perBuyerSignals,
-        sellerSignals,
-        browserSignals
-    }))
+    return reportWin(auctionSignals, perBuyerSignals, sellerSignals, browserSignals)
 }
 
 
