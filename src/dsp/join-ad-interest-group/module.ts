@@ -1,18 +1,13 @@
 import {calc} from "../bidding-logic-url/calc";
 
-export function generateBid(group, auctionSignals, perBuyerSignals, trustedBiddingSignals, browserSignals) {
-    console.log('generateBid',
-        JSON.stringify({
-            group,
-            auctionSignals,
-            perBuyerSignals,
-            trustedBiddingSignals,
-            browserSignals,
-        })
-    )
-    console.log('calc', calc())
+export function generateBid(group,
+                            auctionSignals,
+                            perBuyerSignals,
+                            trustedBiddingSignals,
+                            browserSignals
+) {
     return {
-        bid: 1,
+        bid: calc(),
         ad: {
             adName: "adName"
         },

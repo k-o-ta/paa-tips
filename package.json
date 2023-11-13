@@ -3,7 +3,14 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "tsc-watch --onSuccess \"sh -c 'npx webpack --config webpack.config.js ; npx webpack-dev-server --config webpack.config.server.js'\""
+    "start": "tsc-watch --onSuccess \"sh -c 'npx webpack --config webpack.dev.js ; npx webpack-dev-server --config webpack.config.server.js'\"",
+    "build:dev": "npx webpack --config webpack.dev.js",
+    "build:prod": "npx webpack --config webpack.prod.js",
+    "inspect:dev": "npm run build:dev; node --inspect ./dist/dev/runner/inspect.js",
+    "prof": "npm run build:prod; node --prof ./dist/prod/runner/prof.js",
+    "inspect": "npm run build:prod; node --inspect ./dist/prod/runner/inspect.js",
+    "0x": "npm run build:prod; 0x -o ./dist/prod/runner/prof.js",
+    "step": "npm run build:dev; node --inspect-brk ./dist/dev/runner/step.js"
   },
   "engines": {
     "node": ">=18.12.0",
